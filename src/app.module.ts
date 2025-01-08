@@ -8,6 +8,8 @@ import { AuthModule } from './auth/auth.module';
 import { APP_FILTER, APP_INTERCEPTOR } from '@nestjs/core';
 import { TransformInterceptor } from './interceptors/transform.interceptor';
 import { AllExceptionsFilter } from './filters/all-exceptions.filter';
+import { ServeStaticModule } from '@nestjs/serve-static';
+import { join } from 'path';
 
 @Module({
   imports: [
@@ -17,7 +19,11 @@ import { AllExceptionsFilter } from './filters/all-exceptions.filter';
     }),
     MongooseModule.forRoot(process.env.MONGO_URI),
     UserModule,
-    AuthModule
+    AuthModule,
+    ServeStaticModule.forRoot({
+      rootPath: join(__dirname, '..', 'public'),
+      exclude: ['/api*'],
+    }),
   ],
   controllers: [AppController],
   providers: [
