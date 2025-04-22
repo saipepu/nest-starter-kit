@@ -70,6 +70,13 @@ To get started with this project, follow the instructions below.
   npm run test:e2e
   ```
 
+4. **Test Deployment (on vercel):**
+   Go to vercel and import you git repo might not work sometimes. ( usually 404 error cuz we ignore the /dist folder in .gitignore )
+   It will be so redundant and unnecessary to include /dist folder in your git repo.
+   But you simply can go to vercel and deploy until you see 404 error and come back to your terminal to run the below cmd.
+
+   ```vercel deploy --prod```
+
 ## Project Structure
 
 ```plaintext
