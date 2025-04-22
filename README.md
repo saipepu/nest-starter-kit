@@ -75,7 +75,9 @@ To get started with this project, follow the instructions below.
    It will be so redundant and unnecessary to include /dist folder in your git repo.
    But you simply can go to vercel and deploy until you see 404 error and come back to your terminal to run the below cmd.
 
-   ```vercel deploy --prod```
+   ```bash
+   vercel deploy --prod
+   ```
 
 ## Project Structure
 
